@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Switch } from "@/components/ui/switch"
@@ -64,7 +64,7 @@ const TABS = [
   { id: "system",       label: "System" },
 ]
 
-export default function SettingsPage() {
+function SettingsContent() {
   const searchParams = useSearchParams()
   const [tab, setTab] = useState(() => {
     const t = searchParams.get("tab")
@@ -300,5 +300,13 @@ export default function SettingsPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function SettingsPage() {
+  return (
+    <Suspense fallback={<div className="text-muted-foreground text-sm p-8">Loading settings…</div>}>
+      <SettingsContent />
+    </Suspense>
   )
 }

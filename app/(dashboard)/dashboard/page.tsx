@@ -9,6 +9,7 @@ import { RequestVolumeChart } from "@/components/analytics/RequestVolumeChart"
 import { FulfillmentChart } from "@/components/analytics/FulfillmentChart"
 import { WorkloadRadarChart } from "@/components/analytics/WorkloadRadarChart"
 import { TimeToStaffChart } from "@/components/analytics/TimeToStaffChart"
+import { PriorityDistributionChart } from "@/components/analytics/PriorityDistributionChart"
 import { MOCK_TICKETS, getKPIs, STATUS_META, PRIORITY_META } from "@/lib/tickets"
 
 const kpis = getKPIs(MOCK_TICKETS)
@@ -90,9 +91,11 @@ export default function OverviewPage() {
           <div><WorkloadRadarChart /></div>
           <div><FulfillmentChart /></div>
         </div>
+        <div className="grid grid-cols-1 gap-6 mt-6 lg:grid-cols-2">
+          <PriorityDistributionChart />
+          <TimeToStaffChart />
+        </div>
       </div>
-
-      <TimeToStaffChart />
 
       {/* ── Recent Tickets ────────────────────────────────────────── */}
       <div>

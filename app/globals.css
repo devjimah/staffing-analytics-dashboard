@@ -185,14 +185,25 @@
   }
 }
 
-/* ── Dark mode card shadow override ────────────────────────────── */
+/* ── Card shadow: light lift → dark depth ───────────────────────── */
 /*
-  In light mode, cards use a soft white-biased box-shadow.
-  In dark mode the same shadow is invisible against the dark
-  background, so we replace it with a deep, slightly-blue-tinted
-  shadow that provides subtle depth without washing out.
+  Light mode: soft warm-white lift.
+  Dark mode:  the same rgba(231,228,232) shadow is invisible, so we
+              replace it globally with a deep shadow that provides
+              visible-but-subtle depth against the dark background.
 */
 @layer utilities {
+  /* Composable utility class for manual use */
+  .card-shadow {
+    box-shadow: 4px 4px 18px -2px rgba(231, 228, 232, 0.8);
+  }
+
+  /* Override ALL tailwind arbitrary shadow values on .dark cards */
+  .dark [class*="shadow-[4px_4px_18px"] {
+    box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.55),
+                0 1px 6px -1px rgba(0, 0, 0, 0.35) !important;
+  }
+
   .dark .card-shadow {
     box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.55),
                 0 1px 6px -1px rgba(0, 0, 0, 0.35);
