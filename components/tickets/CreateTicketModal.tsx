@@ -10,7 +10,7 @@ interface CreateTicketModalProps {
 }
 
 const inputCls =
-  "w-full rounded-xl bg-muted px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-brand/30 transition"
+  "w-full rounded-md bg-muted px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-brand/30 transition"
 
 const labelCls = "block text-[12px] font-semibold text-foreground mb-1"
 
@@ -37,7 +37,7 @@ export function CreateTicketModal({ open, onClose }: CreateTicketModalProps) {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="w-full max-w-lg rounded-2xl bg-card shadow-xl overflow-hidden">
+      <div className="w-full max-w-lg rounded-md bg-card shadow-xl overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[#e6eff5] px-6 py-4">
           <h2 className="text-[18px] font-semibold text-foreground">New Staffing Request</h2>
@@ -116,11 +116,11 @@ export function CreateTicketModal({ open, onClose }: CreateTicketModalProps) {
 
           <div className="flex gap-3 pt-2">
             <button type="button" onClick={onClose}
-              className="flex-1 rounded-xl border border-[#dfeaf2] bg-card py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors">
+              className="flex-1 rounded-md border border-[#dfeaf2] bg-card py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors">
               Cancel
             </button>
             <button type="submit"
-              className="flex-1 rounded-xl bg-brand py-2.5 text-sm font-semibold text-white hover:bg-brand/90 transition-colors">
+              className="flex-1 rounded-md bg-brand py-2.5 text-sm font-semibold text-white hover:bg-brand/90 transition-colors">
               Create Request
             </button>
           </div>

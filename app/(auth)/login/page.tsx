@@ -5,10 +5,10 @@ import { siteConfig } from "@/config/site"
 export default function LoginPage() {
   return (
     <div className="w-full max-w-sm">
-      <div className="rounded-2xl bg-card p-8 shadow-[4px_4px_18px_-2px_rgba(231,228,232,0.8)] dark:border dark:border-border space-y-6">
+      <div className="rounded-md bg-card p-8 shadow-[4px_4px_18px_-2px_rgba(231,228,232,0.8)] dark:border dark:border-border space-y-6">
         {/* Logo */}
         <div className="flex flex-col items-center gap-2 text-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand">
+          <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand">
             <span className="text-xl font-bold text-brand-foreground">S</span>
           </div>
           <h1 className="text-2xl font-bold text-foreground">

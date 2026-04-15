@@ -11,7 +11,7 @@ import { siteConfig } from "@/config/site"
 // ── Shared UI helpers ────────────────────────────────────────────
 
 const inputCls =
-  "w-full rounded-xl border border-border bg-muted/40 px-4 py-2.5 text-[14px] text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-brand/30 transition"
+  "w-full rounded-md border border-border bg-muted/40 px-4 py-2.5 text-[14px] text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-brand/30 transition"
 
 const labelCls = "block text-[12px] font-semibold text-foreground mb-1.5"
 
@@ -32,7 +32,7 @@ function SectionCard({ title, description, children }: {
   title: string; description: string; children: React.ReactNode
 }) {
   return (
-    <section className="rounded-2xl bg-card border border-border shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)] overflow-hidden">
+    <section className="rounded-md bg-card border border-border shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)] overflow-hidden">
       <div className="px-6 py-5 border-b border-border bg-muted/20">
         <h2 className="text-[15px] font-bold text-foreground">{title}</h2>
         <p className="text-[12px] text-muted-foreground mt-0.5">{description}</p>
@@ -85,7 +85,7 @@ function SettingsContent() {
           {/* Profile links back to the dedicated profile page */}
           <Link
             href="/dashboard/profile"
-            className="flex w-full items-center rounded-xl px-4 py-2.5 text-left text-[13px] font-semibold text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+            className="flex w-full items-center rounded-md px-4 py-2.5 text-left text-[13px] font-semibold text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
           >
             My Profile ↗
           </Link>
@@ -94,7 +94,7 @@ function SettingsContent() {
               key={t.id}
               onClick={() => setTab(t.id)}
               className={cn(
-                "w-full rounded-xl px-4 py-2.5 text-left text-[13px] font-semibold transition-colors",
+                "w-full rounded-md px-4 py-2.5 text-left text-[13px] font-semibold transition-colors",
                 tab === t.id
                   ? "bg-brand text-white"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -126,7 +126,7 @@ function SettingsContent() {
             <ToggleRow label="Performance review reminders" desc="Weekly digest of pending reviews"     defaultChecked={false} />
             <ToggleRow label="Weekly staffing summary"      desc="Overview of open, closed and new tickets" defaultChecked={true} />
             <div className="flex justify-end pt-2">
-              <button className="rounded-xl bg-brand px-6 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
+              <button className="rounded-md bg-brand px-6 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
                 Save preferences
               </button>
             </div>
@@ -160,7 +160,7 @@ function SettingsContent() {
                 </div>
               </div>
               <div className="flex justify-end">
-                <button className="rounded-xl bg-brand px-6 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
+                <button className="rounded-md bg-brand px-6 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
                   Save
                 </button>
               </div>
@@ -197,7 +197,7 @@ function SettingsContent() {
               <Field id="new-pw"      label="New password"      type="password" placeholder="••••••••" />
               <Field id="confirm-pw"  label="Confirm new password" type="password" placeholder="••••••••" />
               <div className="flex justify-end">
-                <button className="rounded-xl bg-brand px-6 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
+                <button className="rounded-md bg-brand px-6 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
                   Update password
                 </button>
               </div>
@@ -206,13 +206,13 @@ function SettingsContent() {
             <SectionCard title="Two-Factor Authentication" description="Add an extra layer of security to your account.">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-success/10 text-success text-xl">🔐</div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-success/10 text-success text-xl">🔐</div>
                   <div>
                     <p className="text-[13px] font-semibold text-foreground">Authenticator app</p>
                     <p className="text-[12px] text-muted-foreground">Not configured</p>
                   </div>
                 </div>
-                <button className="rounded-xl border border-border bg-card px-4 py-2 text-[12px] font-semibold hover:bg-muted transition-colors">
+                <button className="rounded-md border border-border bg-card px-4 py-2 text-[12px] font-semibold hover:bg-muted transition-colors">
                   Set up
                 </button>
               </div>
@@ -228,7 +228,7 @@ function SettingsContent() {
               ].map((s, i) => (
                 <div key={i} className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-muted text-base">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-md bg-muted text-base">
                       {s.device.includes("iPhone") ? "📱" : "💻"}
                     </div>
                     <div>
@@ -269,7 +269,7 @@ function SettingsContent() {
               <ToggleRow label="Maintenance mode"  desc="Take the dashboard offline for updates" defaultChecked={false} />
               <ToggleRow label="Debug logging"     desc="Enable verbose logging for troubleshooting" defaultChecked={false} />
               <div className="flex justify-end">
-                <button className="rounded-xl bg-brand px-6 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
+                <button className="rounded-md bg-brand px-6 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
                   Save
                 </button>
               </div>
@@ -281,7 +281,7 @@ function SettingsContent() {
                   <p className="text-[13px] font-semibold text-foreground">Export all data</p>
                   <p className="text-[12px] text-muted-foreground">Download a CSV export of all tickets and staff records</p>
                 </div>
-                <button className="rounded-xl border border-border bg-card px-4 py-2 text-[12px] font-semibold hover:bg-muted transition-colors">
+                <button className="rounded-md border border-border bg-card px-4 py-2 text-[12px] font-semibold hover:bg-muted transition-colors">
                   Export
                 </button>
               </div>
@@ -291,7 +291,7 @@ function SettingsContent() {
                   <p className="text-[13px] font-semibold text-destructive">Delete all data</p>
                   <p className="text-[12px] text-muted-foreground">Permanently remove all ticket and staff data</p>
                 </div>
-                <button className="rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-2 text-[12px] font-semibold text-destructive hover:bg-destructive/20 transition-colors">
+                <button className="rounded-md border border-destructive/30 bg-destructive/10 px-4 py-2 text-[12px] font-semibold text-destructive hover:bg-destructive/20 transition-colors">
                   Delete
                 </button>
               </div>

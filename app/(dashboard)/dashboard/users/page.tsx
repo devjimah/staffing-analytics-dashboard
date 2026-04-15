@@ -52,7 +52,7 @@ export default function UsersPage() {
             {filtered.length} of {STAFF.length} members
           </p>
         </div>
-        <button className="flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
+        <button className="flex items-center gap-2 rounded-md bg-brand px-4 py-2.5 text-[13px] font-bold text-white hover:bg-brand/90 transition-colors">
           <span className="text-base leading-none">+</span>
           Add member
         </button>
@@ -61,7 +61,7 @@ export default function UsersPage() {
       {/* ── Toolbar ───────────────────────────────────────────────── */}
       <div className="flex flex-wrap items-center gap-3">
         {/* Search */}
-        <div className="flex items-center gap-2 h-10 rounded-xl bg-muted px-4 flex-1 min-w-[200px]">
+        <div className="flex items-center gap-2 h-10 rounded-md bg-muted px-4 flex-1 min-w-[200px]">
           <svg className="w-4 h-4 text-muted-foreground shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
           </svg>
@@ -79,7 +79,7 @@ export default function UsersPage() {
             key={f}
             onClick={() => setFilter(f)}
             className={cn(
-              "rounded-xl px-3 py-2 text-[12px] font-semibold capitalize transition-colors",
+              "rounded-md px-3 py-2 text-[12px] font-semibold capitalize transition-colors",
               filter === f ? "bg-brand text-white" : "bg-muted text-muted-foreground hover:text-foreground",
             )}
           >
@@ -88,13 +88,13 @@ export default function UsersPage() {
         ))}
 
         {/* View toggle */}
-        <div className="flex items-center gap-1 rounded-xl border border-border bg-card p-1 ml-auto">
+        <div className="flex items-center gap-1 rounded-md border border-border bg-card p-1 ml-auto">
           {(["grid", "list"] as const).map(v => (
             <button
               key={v}
               onClick={() => setView(v)}
               className={cn(
-                "rounded-lg px-3 py-1.5 text-[12px] font-semibold transition-colors",
+                "rounded-md px-3 py-1.5 text-[12px] font-semibold transition-colors",
                 view === v ? "bg-brand text-white" : "text-muted-foreground hover:bg-muted",
               )}
             >
@@ -115,7 +115,7 @@ export default function UsersPage() {
                 key={member.id}
                 href={`/dashboard/users/${member.id}`}
                 className={cn(
-                  "group rounded-2xl bg-card border border-border p-4 flex flex-col gap-3",
+                  "group rounded-md bg-card border border-border p-4 flex flex-col gap-3",
                   "shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]",
                   "hover:shadow-[0_6px_24px_-4px_rgba(45,96,255,0.25)] dark:hover:shadow-[0_6px_24px_-4px_rgba(77,123,255,0.3)]",
                   "hover:border-brand/30 transition-all duration-200",
@@ -124,7 +124,7 @@ export default function UsersPage() {
                 {/* Top row */}
                 <div className="flex items-start justify-between">
                   <div
-                    className="flex h-9 w-9 items-center justify-center rounded-xl text-[12px] font-extrabold text-white shadow"
+                    className="flex h-9 w-9 items-center justify-center rounded-md text-[12px] font-extrabold text-white shadow"
                     style={{ background: avatarGradient(member.name) }}
                   >
                     {initials}
@@ -163,7 +163,7 @@ export default function UsersPage() {
 
       {/* ── List view ─────────────────────────────────────────────── */}
       {view === "list" && (
-        <div className="rounded-2xl bg-card border border-border shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)] overflow-hidden">
+        <div className="rounded-md bg-card border border-border shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)] overflow-hidden">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border bg-muted/30">
@@ -213,7 +213,7 @@ export default function UsersPage() {
                     <td className="px-5 py-3.5 text-right">
                       <Link
                         href={`/dashboard/users/${member.id}`}
-                        className="rounded-lg border border-border px-3 py-1.5 text-[11px] font-semibold text-foreground hover:bg-muted hover:text-brand transition-colors"
+                        className="rounded-md border border-border px-3 py-1.5 text-[11px] font-semibold text-foreground hover:bg-muted hover:text-brand transition-colors"
                       >
                         View →
                       </Link>

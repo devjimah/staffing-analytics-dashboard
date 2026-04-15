@@ -156,7 +156,7 @@ export default async function UserDetailPage({
   if (!user) {
     return (
       <div className="flex flex-col items-center justify-center gap-3 py-24">
-        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-muted">
+        <div className="flex h-16 w-16 items-center justify-center rounded-md bg-muted">
           <HugeiconsIcon icon={UserCircleIcon} size={28} strokeWidth={1.5} className="text-muted-foreground" />
         </div>
         <p className="text-[15px] font-semibold text-foreground">Team member not found</p>
@@ -186,7 +186,7 @@ export default async function UserDetailPage({
       </Link>
 
       {/* ── Hero card ───────────────────────────────────────────── */}
-      <div className="relative rounded-3xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+      <div className="relative rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
         {/* Banner */}
         <div className="h-32 w-full" style={{
           background: `linear-gradient(135deg, color-mix(in srgb, var(--brand) 16%, var(--card)) 0%, var(--card) 100%)`,
@@ -199,7 +199,7 @@ export default async function UserDetailPage({
           <div className="flex items-end justify-between gap-4">
             <div className="flex items-end gap-4">
               <div
-                className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl text-2xl font-extrabold text-white shadow-xl ring-4 ring-card"
+                className="flex h-20 w-20 shrink-0 items-center justify-center rounded-md text-2xl font-extrabold text-white shadow-xl ring-4 ring-card"
                 style={{ background: avatarGradient(user.name) }}
               >
                 {initials}
@@ -219,12 +219,12 @@ export default async function UserDetailPage({
             <div className="flex items-center gap-2 shrink-0">
               <a
                 href={`mailto:${user.email}`}
-                className="flex items-center gap-2 rounded-xl border border-border bg-card px-4 py-2 text-[12px] font-semibold hover:bg-muted transition-colors"
+                className="flex items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-[12px] font-semibold hover:bg-muted transition-colors"
               >
                 <HugeiconsIcon icon={Mail01Icon} size={13} strokeWidth={1.5} />
                 Email
               </a>
-              <button className="flex items-center gap-2 rounded-xl bg-brand px-4 py-2 text-[12px] font-bold text-white hover:bg-brand/90 transition-colors">
+              <button className="flex items-center gap-2 rounded-md bg-brand px-4 py-2 text-[12px] font-bold text-white hover:bg-brand/90 transition-colors">
                 <HugeiconsIcon icon={FileEditIcon} size={13} strokeWidth={1.5} />
                 Edit
               </button>
@@ -269,7 +269,7 @@ export default async function UserDetailPage({
               { label: "Tickets",     value: `${user.ticketsHandled}`,  sub: "Total handled", barVal: user.ticketsHandled, max: 20,        color: "bg-purple-500" },
             ].map(k => (
               <div key={k.label}
-                className="rounded-2xl bg-card border border-border p-4 shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+                className="rounded-md bg-card border border-border p-4 shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
                 <p className="text-[22px] font-extrabold text-foreground leading-tight">{k.value}</p>
                 <p className="text-[11px] font-semibold text-muted-foreground mt-0.5">{k.label}</p>
                 <StatBar value={k.barVal} max={k.max} color={k.color} />
@@ -279,7 +279,7 @@ export default async function UserDetailPage({
           </div>
 
           {/* Activity timeline */}
-          <div className="rounded-2xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+          <div className="rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
             <div className="px-6 py-4 border-b border-border bg-muted/20 flex items-center justify-between">
               <div>
                 <h3 className="text-[14px] font-bold text-foreground">Activity Timeline</h3>
@@ -293,8 +293,8 @@ export default async function UserDetailPage({
               {user.activity.map((a, i) => {
                 const cfg = ACTIVITY_ICON[a.type]
                 return (
-                  <div key={i} className="flex items-start gap-4 rounded-xl px-2 py-3 hover:bg-muted/30 transition-colors">
-                    <div className={cn("flex h-9 w-9 shrink-0 items-center justify-center rounded-xl", cfg.bg)}>
+                  <div key={i} className="flex items-start gap-4 rounded-md px-2 py-3 hover:bg-muted/30 transition-colors">
+                    <div className={cn("flex h-9 w-9 shrink-0 items-center justify-center rounded-md", cfg.bg)}>
                       <HugeiconsIcon icon={cfg.icon} size={16} strokeWidth={1.5} className={cfg.color} />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -319,7 +319,7 @@ export default async function UserDetailPage({
 
 
           {/* Department & Status */}
-          <div className="rounded-2xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+          <div className="rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
             <div className="px-5 py-4 border-b border-border bg-muted/20">
               <h3 className="text-[14px] font-bold text-foreground">Position</h3>
             </div>
@@ -343,7 +343,7 @@ export default async function UserDetailPage({
           </div>
 
           {/* Skills */}
-          <div className="rounded-2xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+          <div className="rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
             <div className="px-5 py-4 border-b border-border bg-muted/20">
               <h3 className="text-[14px] font-bold text-foreground">Skills</h3>
             </div>

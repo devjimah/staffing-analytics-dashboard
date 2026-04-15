@@ -16,7 +16,7 @@ const data = [
 
 export function WorkloadRadarChart() {
   return (
-    <div className="rounded-2xl bg-card p-6 shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)] dark:border dark:border-border">
+    <div className="rounded-md bg-card p-6 shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)] dark:border dark:border-border">
       <h3 className="text-[16px] font-semibold text-foreground mb-1">Workload Spread</h3>
       <p className="text-[12px] text-muted-foreground mb-4">
         Priority &amp; compliance distribution across active tickets

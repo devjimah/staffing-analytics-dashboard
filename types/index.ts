@@ -36,11 +36,18 @@ export interface PerformanceRecord {
 
 // ── Staffing Request Ticket types ─────────────────────────────────
 
+/** The 4 primary workflow boards */
 export type TicketStatus =
-  | "new"
-  | "more-details-needed"
+  | "open"
   | "in-review"
   | "awaiting-feedback"
+  | "outcome"
+
+/** Historical origin tags (applied automatically when a ticket enters Outcome,
+ *  or carried from creation for tickets that started in sub-states) */
+export type TicketTag =
+  | "new"
+  | "more-details-needed"
   | "candidate-submitted"
   | "successful"
   | "unsuccessful"
@@ -55,6 +62,7 @@ export interface StaffingTicket {
   requestedBy: string     // PM / AM / BDM name
   assignedTo: string      // Staffing team member
   status: TicketStatus
+  tags: TicketTag[]       // Origin / outcome tags for filtering & history
   priority: TicketPriority
   headcount: number       // Number of staff needed
   department: string      // Department needing staff

@@ -50,7 +50,7 @@ export function Sidebar() {
       >
         {/* Logo */}
         <div className="flex h-[100px] items-center gap-3 border-b border-[#e6eff5] px-5 shrink-0">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-brand">
             <span className="text-base font-extrabold text-brand-foreground">S</span>
           </div>
           {isOpen && (
@@ -89,7 +89,7 @@ export function Sidebar() {
               >
                 {/* Active indicator bar */}
                 {isActive && (
-                  <span className="absolute left-0 top-0 bottom-0 w-[6px] bg-brand rounded-r-[10px]" />
+                  <span className="absolute left-0 top-0 bottom-0 w-[6px] bg-brand rounded-r-md" />
                 )}
 
                 {icon && (
@@ -115,7 +115,7 @@ export function Sidebar() {
         <div className="border-t border-[#e6eff5] p-4">
           <div
             className={cn(
-              "flex items-center gap-3 rounded-2xl px-3 py-2.5 bg-muted/60",
+              "flex items-center gap-3 rounded-md px-3 py-2.5 bg-muted/60",
               isOpen ? "" : "justify-center px-0 bg-transparent",
             )}
           >

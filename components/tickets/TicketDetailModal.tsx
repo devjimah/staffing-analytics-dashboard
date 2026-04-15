@@ -17,8 +17,7 @@ const MOCK_THREAD = [
 ]
 
 const STATUS_ORDER = [
-  "new", "more-details-needed", "in-review",
-  "awaiting-feedback", "candidate-submitted", "successful",
+  "open", "in-review", "awaiting-feedback", "outcome",
 ] as const
 
 type ActiveStatus = typeof STATUS_ORDER[number]
@@ -76,7 +75,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
       <div
         className={cn(
           "relative flex flex-col w-full max-w-2xl max-h-[90vh]",
-          "rounded-3xl overflow-hidden",
+          "rounded-md overflow-hidden",
           "bg-card border border-border",
           "shadow-[0_32px_80px_-8px_rgba(0,0,0,0.6)]",
           "animate-in fade-in zoom-in-95 duration-200",
@@ -95,7 +94,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
           {/* Top row */}
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[11px] font-bold text-muted-foreground bg-muted rounded-lg px-2.5 py-0.5 tracking-wide">
+              <span className="text-[11px] font-bold text-muted-foreground bg-muted rounded-md px-2.5 py-0.5 tracking-wide">
                 {ticket.id}
               </span>
               <span className={cn("rounded-full px-2.5 py-0.5 text-[10px] font-bold", priority.bg, priority.color)}>
@@ -201,7 +200,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
 
               {/* SLA alert */}
               {ticket.slaBreached && (
-                <div className="flex items-start gap-3 rounded-2xl bg-destructive/10 border border-destructive/20 px-4 py-3">
+                <div className="flex items-start gap-3 rounded-md bg-destructive/10 border border-destructive/20 px-4 py-3">
                   <span className="text-destructive text-base mt-0.5">⚠</span>
                   <div>
                     <p className="text-[12px] font-bold text-destructive">SLA Target Breached</p>
@@ -213,7 +212,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
               )}
 
               {/* Key fields grid */}
-              <div className="grid grid-cols-2 gap-4 rounded-2xl bg-muted/30 border border-border/60 p-4">
+              <div className="grid grid-cols-2 gap-4 rounded-md bg-muted/30 border border-border/60 p-4">
                 <Field label="Department"   value={ticket.department} />
                 <Field label="Headcount"    value={`${ticket.headcount} position${ticket.headcount > 1 ? "s" : ""}`} />
                 <Field label="Requested by" value={ticket.requestedBy} />
@@ -227,7 +226,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
                 <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground mb-2">
                   Assigned To
                 </p>
-                <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
+                <div className="flex items-center gap-3 rounded-md border border-border/60 bg-muted/30 px-4 py-3">
                   <div className={cn(
                     "flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-[12px] font-extrabold text-white",
                     avatarColor(initials),
@@ -247,7 +246,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
                   Notes & Requirements
                 </p>
                 <p className={cn(
-                  "text-[13px] leading-relaxed rounded-2xl border border-border/60 bg-muted/30 px-4 py-3",
+                  "text-[13px] leading-relaxed rounded-md border border-border/60 bg-muted/30 px-4 py-3",
                   ticket.notes ? "text-foreground" : "text-muted-foreground italic",
                 )}>
                   {ticket.notes || "No additional notes provided."}
@@ -280,7 +279,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
                       <span className="text-[10px] text-muted-foreground ml-auto">{c.time}</span>
                     </div>
                     <div className={cn(
-                      "rounded-2xl rounded-tl-sm px-4 py-2.5 text-[13px] leading-relaxed",
+                      "rounded-md rounded-tl-sm px-4 py-2.5 text-[13px] leading-relaxed",
                       c.type === "update"
                         ? "bg-brand/8 border border-brand/20 text-foreground"
                         : "bg-muted/50 border border-border/60 text-foreground",
@@ -312,7 +311,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
               <textarea
                 rows={1}
                 placeholder="Add a comment…"
-                className="w-full resize-none rounded-2xl border border-border bg-card px-4 py-2.5 text-[13px] text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-brand/30 transition"
+                className="w-full resize-none rounded-md border border-border bg-card px-4 py-2.5 text-[13px] text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-brand/30 transition"
                 value={comment}
                 onChange={e => setComment(e.target.value)}
                 onKeyDown={e => e.key === "Enter" && !e.shiftKey && (e.preventDefault(), submitComment())}
@@ -321,7 +320,7 @@ export function TicketDetailModal({ ticket, onClose }: Props) {
             <button
               onClick={submitComment}
               disabled={!comment.trim()}
-              className="h-9 rounded-2xl bg-brand px-5 text-[12px] font-bold text-white hover:bg-brand/90 disabled:opacity-35 disabled:cursor-not-allowed transition-all shrink-0"
+              className="h-9 rounded-md bg-brand px-5 text-[12px] font-bold text-white hover:bg-brand/90 disabled:opacity-35 disabled:cursor-not-allowed transition-all shrink-0"
             >
               Post
             </button>

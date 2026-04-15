@@ -55,7 +55,7 @@ export function BankDashSidebar() {
               )}
             >
               {isActive && (
-                <span className="absolute left-0 top-0 bottom-0 w-[6px] bg-[#2d60ff] rounded-r-[10px]" />
+                <span className="absolute left-0 top-0 bottom-0 w-[6px] bg-[#2d60ff] rounded-r-md" />
               )}
               {item.icon ? (
                 <img

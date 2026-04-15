@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils"
-import { STATUS_META, PRIORITY_META } from "@/lib/tickets"
+import { STATUS_META, PRIORITY_META, TAG_META } from "@/lib/tickets"
 import type { StaffingTicket } from "@/types"
 
 interface TicketCardProps {
@@ -20,7 +20,7 @@ export function TicketCard({ ticket, onClick }: TicketCardProps) {
     <div
       onClick={onClick}
       className={cn(
-        "group rounded-2xl bg-card p-4 cursor-pointer",
+        "group rounded-md bg-card p-4 cursor-pointer",
         "shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]",
         "dark:border dark:border-border",
         "hover:shadow-[0_6px_24px_-4px_rgba(45,96,255,0.3)] dark:hover:shadow-[0_6px_24px_-4px_rgba(77,123,255,0.35)] transition-shadow duration-200",
@@ -38,11 +38,25 @@ export function TicketCard({ ticket, onClick }: TicketCardProps) {
       <h4 className="text-[14px] font-semibold text-foreground leading-tight mb-1 line-clamp-2">
         {ticket.title}
       </h4>
-      <p className="text-[12px] text-muted-foreground mb-3">{ticket.client}</p>
+      <p className="text-[12px] text-muted-foreground mb-2">{ticket.client}</p>
+
+      {/* Tags */}
+      {ticket.tags.length > 0 && (
+        <div className="flex flex-wrap gap-1 mb-2">
+          {ticket.tags.map(tag => {
+            const m = TAG_META[tag]
+            return (
+              <span key={tag} className={cn("rounded-full px-2 py-0.5 text-[9px] font-bold", m.bg, m.color)}>
+                {m.label}
+              </span>
+            )
+          })}
+        </div>
+      )}
 
       {/* SLA breach banner */}
       {ticket.slaBreached && (
-        <div className="mb-3 flex items-center gap-1.5 rounded-lg bg-destructive/10 px-2 py-1">
+        <div className="mb-3 flex items-center gap-1.5 rounded-md bg-destructive/10 px-2 py-1">
           <span className="h-1.5 w-1.5 rounded-full bg-destructive shrink-0" />
           <span className="text-[10px] font-semibold text-destructive">SLA Breached</span>
         </div>

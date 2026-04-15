@@ -38,7 +38,7 @@ const USER = {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-border bg-muted/40 px-4 py-2.5 text-[13px] text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-brand/30 transition"
+  "w-full rounded-md border border-border bg-muted/40 px-4 py-2.5 text-[13px] text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-brand/30 transition"
 
 const labelCls = "block text-[11px] font-bold uppercase tracking-[0.08em] text-muted-foreground mb-1.5"
 
@@ -75,7 +75,7 @@ export default function ProfilePage() {
     <div className="space-y-6">
 
       {/* ── HERO ──────────────────────────────────────────────────── */}
-      <div className="relative rounded-3xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+      <div className="relative rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
         {/* Banner */}
         <div className="h-32 w-full" style={{
           background: "linear-gradient(135deg, color-mix(in srgb,var(--brand) 22%,var(--card)) 0%, color-mix(in srgb,#845ef7 16%,var(--card)) 100%)",
@@ -88,7 +88,7 @@ export default function ProfilePage() {
           <div className="flex items-end justify-between gap-4">
             <div className="flex items-end gap-4">
               <div
-                className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl text-2xl font-extrabold text-white shadow-xl ring-4 ring-card"
+                className="flex h-20 w-20 shrink-0 items-center justify-center rounded-md text-2xl font-extrabold text-white shadow-xl ring-4 ring-card"
                 style={{ background: "linear-gradient(135deg,#2d60ff 0%,#845ef7 100%)" }}
               >
                 {USER.initials}
@@ -102,7 +102,7 @@ export default function ProfilePage() {
             <button
               onClick={() => setEditing(e => !e)}
               className={cn(
-                "flex items-center gap-2 rounded-xl px-5 py-2.5 text-[13px] font-bold transition-all shrink-0",
+                "flex items-center gap-2 rounded-md px-5 py-2.5 text-[13px] font-bold transition-all shrink-0",
                 editing
                   ? "bg-success/10 text-success border border-success/30"
                   : "bg-brand text-white hover:bg-brand/90 shadow-sm",
@@ -141,7 +141,7 @@ export default function ProfilePage() {
         <div className="lg:col-span-2 space-y-5">
 
           {/* Personal Information */}
-          <div className="rounded-2xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+          <div className="rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
             <div className="px-5 py-4 border-b border-border bg-muted/20 flex items-center gap-2">
               <HugeiconsIcon icon={UserCircleIcon} size={15} strokeWidth={1.5} className="text-muted-foreground" />
               <div>
@@ -187,7 +187,7 @@ export default function ProfilePage() {
           </div>
 
           {/* Notifications */}
-          <div className="rounded-2xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+          <div className="rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
             <div className="px-5 py-4 border-b border-border bg-muted/20 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <HugeiconsIcon icon={Notification01Icon} size={15} strokeWidth={1.5} className="text-muted-foreground" />
@@ -225,7 +225,7 @@ export default function ProfilePage() {
         <div className="space-y-5">
 
           {/* Activity Stats */}
-          <div className="rounded-2xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+          <div className="rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
             <div className="px-5 py-4 border-b border-border bg-muted/20">
               <h3 className="text-[14px] font-bold text-foreground">Activity Stats</h3>
             </div>
@@ -236,8 +236,8 @@ export default function ProfilePage() {
                 { icon: Alert01Icon,          label: "SLA breaches",   value: "2",    color: "text-destructive", bg: "bg-destructive/10" },
                 { icon: Clock01Icon,          label: "Avg response",   value: "1.4d", color: "text-warning",     bg: "bg-warning/10" },
               ].map(s => (
-                <div key={s.label} className="rounded-xl bg-muted/30 px-3 py-3">
-                  <div className={cn("flex h-7 w-7 items-center justify-center rounded-lg mb-2", s.bg)}>
+                <div key={s.label} className="rounded-md bg-muted/30 px-3 py-3">
+                  <div className={cn("flex h-7 w-7 items-center justify-center rounded-md mb-2", s.bg)}>
                     <HugeiconsIcon icon={s.icon} size={14} strokeWidth={1.5} className={s.color} />
                   </div>
                   <p className={cn("text-[20px] font-extrabold leading-none", s.color)}>{s.value}</p>
@@ -248,15 +248,15 @@ export default function ProfilePage() {
           </div>
 
           {/* Account Settings Links */}
-          <div className="rounded-2xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+          <div className="rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
             <div className="px-5 py-4 border-b border-border bg-muted/20">
               <h3 className="text-[14px] font-bold text-foreground">Account Settings</h3>
             </div>
             <div className="p-2">
               {SETTINGS_LINKS.map(l => (
                 <Link key={l.label} href={l.href}
-                  className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 hover:bg-muted/60 transition-colors group">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground group-hover:bg-brand/10 group-hover:text-brand transition-colors">
+                  className="flex w-full items-center gap-3 rounded-md px-3 py-2.5 hover:bg-muted/60 transition-colors group">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground group-hover:bg-brand/10 group-hover:text-brand transition-colors">
                     <HugeiconsIcon icon={l.icon} size={15} strokeWidth={1.5} />
                   </span>
                   <span className="flex-1 text-[13px] font-semibold text-foreground group-hover:text-brand transition-colors">{l.label}</span>
@@ -267,14 +267,14 @@ export default function ProfilePage() {
           </div>
 
           {/* Recent Activity */}
-          <div className="rounded-2xl bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
+          <div className="rounded-md bg-card border border-border overflow-hidden shadow-[0_4px_18px_-2px_rgba(231,228,232,0.9)] dark:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.85)]">
             <div className="px-5 py-4 border-b border-border bg-muted/20">
               <h3 className="text-[14px] font-bold text-foreground">Recent Activity</h3>
             </div>
             <div className="px-4 py-3 space-y-0.5">
               {ACTIVITY.map((a, i) => (
-                <div key={i} className="flex items-start gap-3 rounded-xl px-1 py-2.5">
-                  <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-xl", a.bg)}>
+                <div key={i} className="flex items-start gap-3 rounded-md px-1 py-2.5">
+                  <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-md", a.bg)}>
                     <HugeiconsIcon icon={a.icon} size={15} strokeWidth={1.5} className={a.color} />
                   </span>
                   <div className="flex-1 min-w-0">

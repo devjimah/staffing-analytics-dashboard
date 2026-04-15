@@ -18,7 +18,7 @@ const data = [
 
 export function PriorityTrendChart() {
   return (
-    <div className="rounded-2xl bg-card p-6 shadow-[4px_4px_18px_-2px_rgba(231,228,232,0.8)] dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] dark:border dark:border-border">
+    <div className="rounded-md bg-card p-6 shadow-[4px_4px_18px_-2px_rgba(231,228,232,0.8)] dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] dark:border dark:border-border">
       <div className="flex items-start justify-between mb-5">
         <div>
           <h3 className="text-[16px] font-semibold text-foreground mb-1">

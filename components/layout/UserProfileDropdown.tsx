@@ -69,7 +69,7 @@ export function UserProfileDropdown() {
       {open && (
         <div className={cn(
           "absolute right-0 top-[calc(100%+10px)] z-[100] w-[300px]",
-          "rounded-3xl border border-border bg-card shadow-[0_24px_60px_-8px_rgba(0,0,0,0.35)]",
+          "rounded-md border border-border bg-card shadow-[0_24px_60px_-8px_rgba(0,0,0,0.35)]",
           "overflow-hidden",
           "animate-in fade-in slide-in-from-top-2 duration-200",
         )}>
@@ -87,7 +87,7 @@ export function UserProfileDropdown() {
 
               <div className="flex items-start gap-4">
                 <div
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold text-white shadow-lg"
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md text-xl font-extrabold text-white shadow-lg"
                   style={{ background: avatarGradient() }}
                 >
                   {USER.initials}
@@ -105,7 +105,7 @@ export function UserProfileDropdown() {
                   { label: "Department", value: USER.department },
                   { label: "Member since", value: USER.joined },
                 ].map(s => (
-                  <div key={s.label} className="rounded-xl bg-muted/40 px-3 py-2">
+                  <div key={s.label} className="rounded-md bg-muted/40 px-3 py-2">
                     <p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground">{s.label}</p>
                     <p className="text-[11px] font-semibold text-foreground mt-0.5">{s.value}</p>
                   </div>
@@ -122,9 +122,9 @@ export function UserProfileDropdown() {
               <button
                 key={item.label}
                 onClick={() => navigate(item.href)}
-                className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left hover:bg-muted/60 transition-colors group"
+                className="flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left hover:bg-muted/60 transition-colors group"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground group-hover:bg-brand/10 group-hover:text-brand transition-colors">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground group-hover:bg-brand/10 group-hover:text-brand transition-colors">
                   <HugeiconsIcon icon={item.icon} size={16} strokeWidth={1.5} />
                 </span>
                 <div className="flex-1 min-w-0">
@@ -142,8 +142,8 @@ export function UserProfileDropdown() {
 
           {/* Sign out */}
           <div className="p-2">
-            <button className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left hover:bg-destructive/10 transition-colors group">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground group-hover:bg-destructive/10 group-hover:text-destructive transition-colors">
+            <button className="flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left hover:bg-destructive/10 transition-colors group">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground group-hover:bg-destructive/10 group-hover:text-destructive transition-colors">
                 <HugeiconsIcon icon={Logout01Icon} size={16} strokeWidth={1.5} />
               </span>
               <span className="text-[13px] font-semibold text-destructive">Sign Out</span>
