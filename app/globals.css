@@ -45,85 +45,168 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
+    /* BankDash brand tokens */
+    --color-brand: var(--brand);
+    --color-brand-foreground: var(--brand-foreground);
+    --color-brand-muted: var(--brand-muted);
+    --color-success: var(--success);
+    --color-warning: var(--warning);
 }
 
+/* ── BankDash Light Theme ───────────────────────────────────────── */
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.45rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    /* Brand */
+    --brand: #7b43ff;
+    --brand-foreground: #ffffff;
+    --brand-muted: rgba(45, 96, 255, 0.1);
+
+    /* Semantic */
+    --success: #16dbcc;
+    --warning: #ffbb38;
+
+    /* Page & surface */
+    --background: #f5f7fa;
+    --foreground: #343c6a;
+
+    /* Cards */
+    --card: #ffffff;
+    --card-foreground: #343c6a;
+
+    /* Popover */
+    --popover: #ffffff;
+    --popover-foreground: #343c6a;
+
+    /* Primary (dark navy text / buttons) */
+    --primary: #040507;
+    --primary-foreground: #ffffff;
+
+    /* Secondary (light fill) */
+    --secondary: #edf1f7;
+    --secondary-foreground: #343c6a;
+
+    /* Muted (subtle fills & secondary text) */
+    --muted: #f5f7fa;
+    --muted-foreground: #718ebf;
+
+    /* Accent */
+    --accent: #edf1f7;
+    --accent-foreground: #343c6a;
+
+    /* Destructive */
+    --destructive: #ff4b4a;
+
+    /* Borders & inputs */
+    --border: #dfeaf2;
+    --input: #edf1f7;
+    --ring: #2d60ff;
+
+    /* Charts */
+    --chart-1: #2d60ff;
+    --chart-2: #16dbcc;
+    --chart-3: #ffbb38;
+    --chart-4: #ff4b4a;
+    --chart-5: #343c6a;
+
+    /* Radius — 25 px card corners */
+    --radius: 1rem;
+
+    /* Sidebar */
+    --sidebar: #ffffff;
+    --sidebar-foreground: #343c6a;
+    --sidebar-primary: #2d60ff;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f5f7fa;
+    --sidebar-accent-foreground: #343c6a;
+    --sidebar-border: #e6eff5;
+    --sidebar-ring: #2d60ff;
 }
 
+/* ── BankDash Dark Adaptation ───────────────────────────────────── */
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    --brand: #4d7bff;
+    --brand-foreground: #ffffff;
+    --brand-muted: rgba(77, 123, 255, 0.15);
+
+    --success: #16dbcc;
+    --warning: #ffbb38;
+
+    --background: #000000;
+    --foreground: #e4e9f7;
+
+    --card: #111318;
+    --card-foreground: #e4e9f7;
+
+    --popover: #111318;
+    --popover-foreground: #e4e9f7;
+
+    --primary: #e4e9f7;
+    --primary-foreground: #000000;
+
+    --secondary: #1a1a1f;
+    --secondary-foreground: #e4e9f7;
+
+    --muted: #1a1a1f;
+    --muted-foreground: #718ebf;
+
+    --accent: #1a1a1f;
+    --accent-foreground: #e4e9f7;
+
+    --destructive: #ff4b4a;
+
+    --border: #222228;
+    --input: #1a1a1f;
+    --ring: #4d7bff;
+
+    --chart-1: #4d7bff;
+    --chart-2: #16dbcc;
+    --chart-3: #ffbb38;
+    --chart-4: #ff4b4a;
+    --chart-5: #8499d4;
+
+    --sidebar: #0a0a0d;
+    --sidebar-foreground: #e4e9f7;
+    --sidebar-primary: #4d7bff;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #1a1a1f;
+    --sidebar-accent-foreground: #e4e9f7;
+    --sidebar-border: #222228;
+    --sidebar-ring: #4d7bff;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
   html {
     @apply font-sans;
-    }
+  }
 }
+
+/* ── Dark mode card shadow override ────────────────────────────── */
+/*
+  In light mode, cards use a soft white-biased box-shadow.
+  In dark mode the same shadow is invisible against the dark
+  background, so we replace it with a deep, slightly-blue-tinted
+  shadow that provides subtle depth without washing out.
+*/
+@layer utilities {
+  .dark .card-shadow {
+    box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.55),
+                0 1px 6px -1px rgba(0, 0, 0, 0.35);
+  }
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; border-radius: 999px; }
+::-webkit-scrollbar-corner { background: transparent; }
+::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--muted-foreground) 28%, transparent); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--brand) 65%, transparent); }
+.scrollbar-thin::-webkit-scrollbar { width: 4px; height: 4px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--muted-foreground) 22%, transparent); border-radius: 999px; }
+.scrollbar-thin::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--brand) 55%, transparent); }
+* { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--muted-foreground) 28%, transparent) transparent; }

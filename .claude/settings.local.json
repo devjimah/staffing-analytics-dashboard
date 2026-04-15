@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx shadcn@latest add input badge switch table avatar separator --yes)",
+      "Bash(node -e \"const icons = require\\('./node_modules/@hugeicons/core-free-icons/dist/index.js'\\); const names = Object.keys\\(icons\\); console.log\\(names.filter\\(n => /home|analytic|user.group|settings/i.test\\(n\\)\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(node -e \"const icons = require\\('./node_modules/@hugeicons/core-free-icons/dist/cjs/index.js'\\); const names = Object.keys\\(icons\\); console.log\\(names.filter\\(n => /^\\(Home01|Analytics01|UserGroup01|Settings01\\)/i.test\\(n\\)\\).join\\('\\\\n'\\)\\); console.log\\('---'\\); console.log\\(names.filter\\(n => /settings/i.test\\(n\\)\\).slice\\(0,5\\).join\\('\\\\n'\\)\\); console.log\\('---'\\); console.log\\(names.filter\\(n => /usergroup|user.group/i.test\\(n\\)\\).slice\\(0,5\\).join\\('\\\\n'\\)\\);\")",
+      "Bash(node -e \"const icons = require\\('./node_modules/@hugeicons/core-free-icons/dist/cjs/index.js'\\); const names = Object.keys\\(icons\\); console.log\\('Total:', names.length\\); console.log\\(names.slice\\(0,20\\).join\\('\\\\n'\\)\\);\")",
+      "Bash(npm run:*)"
+    ]
+  }
+}
